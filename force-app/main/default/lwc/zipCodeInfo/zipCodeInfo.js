@@ -98,7 +98,7 @@ export default class ZipCodeInfo extends LightningElement {
                 })
                 .catch(error => {
                     console.error('error: ', error);
-                    t//his.isLoaded = false;
+                    //this.isLoaded = false;
                 });
         }
     }
