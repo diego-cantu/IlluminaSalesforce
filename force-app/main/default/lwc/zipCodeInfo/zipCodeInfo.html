@@ -1,0 +1,45 @@
+
+
+<template>
+   <div class="slds-card">
+   <lightning-card title="Zip Code Lookup V34">
+
+      <div style='width:200px;'>
+         <lightning-combobox class="country" label="Select Country" value={country} options={countryOptions}
+            onchange={handleCountryChange} placeholder="Select a country"></lightning-combobox>
+      </div>
+
+      <div style='width:200px;'>
+         <lightning-input class="zipCode" label="Enter Zip Code : " placeholder="Enter ZipCode"
+            value={zipCodeValue}></lightning-input>
+      </div>
+
+      <lightning-button label="Submit" onclick={handleBtnClick}></lightning-button>
+
+      <div if:true={isLoaded} class="slds-is-relative">
+         <lightning-spinner alternative-text="Loading…" variant="brand"></lightning-spinner>
+      </div>
+
+      <template if:true={noZipFound}>
+         <div class="slds-notify slds-notify_alert" role="alert">No Data Available</div>
+      </template>
+
+
+      <template if:true={showSummaryDetail}>
+        <br>
+
+        <template if:true={showSaveButton}>
+         <lightning-button label="Save to NewZipCode" onclick={handleSaveButtonClick}></lightning-button>
+      </template>
+
+      </template> 
+
+      <c-modal-Component
+      is-modal-open={isModalOpen}
+      modal-data={modalData}
+      onclosemodal={handleModalClose}>
+   </c-modal-Component>
+
+   </lightning-card>
+   </div>
+</template>

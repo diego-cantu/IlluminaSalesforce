@@ -1,0 +1,19 @@
+/*table, th, td {
+    border: 1px solid black;
+    padding: 1px;
+    text-align: left;
+    }
+    .myTable {
+    width: 28%;
+    background-color: #f1f1c1;
+    margin-left: auto;
+    margin-right: auto;
+    } */
+
+    .slds-card { /* Adjust the class based on your component structure */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh; /* Adjust as needed */
+    }
+    
